@@ -1,0 +1,403 @@
+{
+	"name": "Folha de eventos 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "pontos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 611611991816419
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Toque",
+					"sid": 702906385309991,
+					"parameters": {
+						"object": "direita"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "player",
+					"sid": 212412702105641,
+					"behaviorType": "Plataforma",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "player",
+					"sid": 113039049361573,
+					"parameters": {
+						"animation": "\"direita\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 308452989010503
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Toque",
+					"sid": 917191005732025,
+					"parameters": {
+						"object": "esquerda"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "player",
+					"sid": 220465288988830,
+					"behaviorType": "Plataforma",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "player",
+					"sid": 457415557781486,
+					"parameters": {
+						"animation": "\"esquerda\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 611001070542851
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Toque",
+					"sid": 406539893712477,
+					"parameters": {
+						"object": "direita"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Toque",
+					"sid": 867930333000902,
+					"parameters": {
+						"object": "esquerda"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "player",
+					"sid": 783468922244071,
+					"parameters": {
+						"animation": "\"parado\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 221915608994148
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 211119142123984
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Texto",
+					"sid": 538749279970662,
+					"parameters": {
+						"text": "pontos"
+					}
+				}
+			],
+			"sid": 337470674102667
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 742847114392906
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Áudio",
+					"sid": 624270827082393
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 457051176145474,
+					"parameters": {
+						"audio-file": "fundo",
+						"loop": "looping",
+						"volume": "-18",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 985327851189772,
+					"parameters": {
+						"variable": "pontos",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 444538403519385
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 186351028692189,
+					"parameters": {
+						"interval-seconds": "random(0.75,2)"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 499995600756521,
+					"parameters": {
+						"object-to-create": "Cobra",
+						"layer": "0",
+						"x": "random(34,435)",
+						"y": "-10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 228852352965209
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 587184307766331,
+					"parameters": {
+						"interval-seconds": "random(1.25,2)"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 936545793529135,
+					"parameters": {
+						"object-to-create": "moeda",
+						"layer": "0",
+						"x": "random(34,435)",
+						"y": "-10",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 677022590404695
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cobra",
+					"sid": 404174007446205,
+					"parameters": {
+						"object": "Chão"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Cobra",
+					"sid": 336267280434057
+				}
+			],
+			"sid": 870213687056879
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "moeda",
+					"sid": 991076926331889,
+					"parameters": {
+						"object": "Chão"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "moeda",
+					"sid": 949939424642758
+				}
+			],
+			"sid": 569553344820875
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 688121461982109,
+					"parameters": {
+						"object": "moeda"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "moeda",
+					"sid": 177163892555629,
+					"parameters": {
+						"object": "particulamoeda",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "moeda",
+					"sid": 244960854491789
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 560329251678996,
+					"parameters": {
+						"variable": "pontos",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 474723853991378,
+					"parameters": {
+						"audio-file": "moeda",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 720038742737244
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player",
+					"sid": 251053795057070,
+					"parameters": {
+						"object": "Cobra"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Cobra",
+					"sid": 997200279006827
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "player",
+					"sid": 952926240617904,
+					"parameters": {
+						"object": "particulavida",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "player",
+					"sid": 718416647064128
+				},
+				{
+					"id": "play",
+					"objectClass": "Áudio",
+					"sid": 713291863798777,
+					"parameters": {
+						"audio-file": "morte",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 530689502126201,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 865326501712165,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				}
+			],
+			"sid": 433513208750986
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 390705938817110
+		}
+	],
+	"sid": 764455468663179
+}

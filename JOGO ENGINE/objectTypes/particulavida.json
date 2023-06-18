@@ -1,0 +1,20 @@
+{
+	"name": "particulavida",
+	"plugin-id": "Particles",
+	"sid": 541980218275764,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 20,
+		"height": 20,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4469153,
+		"useCollisionPoly": true
+	}
+}

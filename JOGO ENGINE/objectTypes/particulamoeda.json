@@ -1,0 +1,20 @@
+{
+	"name": "particulamoeda",
+	"plugin-id": "Particles",
+	"sid": 120646028546973,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 20,
+		"height": 20,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3086917,
+		"useCollisionPoly": true
+	}
+}
